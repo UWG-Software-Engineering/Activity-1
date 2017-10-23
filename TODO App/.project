@@ -20,4 +20,11 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>net.sf.eclipsecs.core.CheckstyleNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>resources/README.md</name>
+			<type>1</type>
+			<location>C:/Users/jcorley/Testing-Git/Activity-1/README.md</location>
+		</link>
+	</linkedResources>
 </projectDescription>
