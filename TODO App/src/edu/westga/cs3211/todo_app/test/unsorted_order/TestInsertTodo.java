@@ -32,5 +32,21 @@ public class TestInsertTodo {
 		assertTrue( list.contains(num2));
 		
 	}
+	
+	@Test
+	public void testInvalidToDoAndList() {
+		Todo num = new Todo(Priority.HIGH, "Eat");
+		Todo num2 = new Todo(Priority.MEDIUM, "Eat");
+		Todo num3 = new Todo(Priority.LOW, "Eat");
+		List<Todo> list = new ArrayList<Todo>();
+		UnsortedOrder unsorted = new UnsortedOrder();
+		unsorted.insertTodo(num, list);
+		
+		unsorted.insertTodo(num2, list);
+		assertTrue( list.contains(num));
+		assertFalse( list.contains(num3));
+		assertTrue( list.contains(num2));
+		
+	}
 
 }
