@@ -25,7 +25,11 @@ public class TestInsertTodo {
 		List<Todo> list = new ArrayList<Todo>();
 		UnsortedOrder unsorted = new UnsortedOrder();
 		unsorted.insertTodo(num, list);
+		unsorted.insertTodo(num3, list);
+		unsorted.insertTodo(num2, list);
 		assertTrue( list.contains(num));
+		assertTrue( list.contains(num3));
+		assertTrue( list.contains(num2));
 		
 	}
 
