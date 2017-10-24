@@ -13,9 +13,13 @@ import edu.westga.cs3211.todo_app.model.UnsortedOrder;
 
 public class TestInsertTodo {
 
-	@Test
+	@Test (expected = IllegalArgumentException.class)
 	public void testNullInsert() {
-		 //TODO
+		List<Todo> list = new ArrayList<Todo>();
+		UnsortedOrder unsorted = new UnsortedOrder();
+		unsorted.insertTodo(null, list);
+		equals(null);
+		
 	}
 	@Test
 	public void testValidToDoAndList() {
