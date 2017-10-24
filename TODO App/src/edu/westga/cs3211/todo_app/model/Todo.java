@@ -49,46 +49,48 @@ public class Todo {
 	 * Create a new TODO with the provided details.
 	 * 
 	 * @precondition priority != null && dueDate != null &&
-	 *               dueDate.after(LocalDateTime.now()) description != null &&
+	 *               dueDateTime.after(LocalDateTime.now()) &&
+	 *               description != null &&
 	 *               description.length() > 3
 	 * @postcondition getPriority() == priority && getDueDate() == dueDate &&
 	 *                getDescription() == description &&
 	 * 
 	 * @param priority
 	 *            priority of the TODO
-	 * @param dueDate
-	 *            when the TODO is due OR null if the TODO has no deadline
 	 * @param description
 	 *            description of the TODO
+	 * @param dueDateTime
+	 *            when the TODO is due OR null if the TODO has no deadline
 	 */
-	public Todo(Priority priority, LocalDateTime dueDate, String description) {
+	public Todo(Priority priority, String description, LocalDateTime dueDateTime) {
 		this(priority, description);
-		if (dueDate == null) {
+		if (dueDateTime == null) {
 			throw new IllegalArgumentException("Must provide a due date.");
 		}
-		if (!dueDate.isAfter(LocalDateTime.now())) {
+		if (!dueDateTime.isAfter(LocalDateTime.now())) {
 			throw new IllegalArgumentException("Must provide a future due date.");
 		}
-		this.dueDate = dueDate;
+		this.dueDate = dueDateTime;
 	}
 
 	/**
 	 * Create a new TODO with the provided details.
 	 * 
 	 * @precondition priority != null && dueDate != null &&
-	 *               dueDate.after(LocalDate.now()) description != null &&
+	 *               dueDate.after(LocalDate.now()) &&
+	 *               description != null &&
 	 *               description.length() > 3
 	 * @postcondition getPriority() == priority && getDueDate() == dueDate &&
 	 *                getDescription() == description &&
 	 * 
 	 * @param priority
 	 *            priority of the TODO
-	 * @param dueDate
-	 *            when the TODO is due OR null if the TODO has no deadline
 	 * @param description
 	 *            description of the TODO
+	 * @param dueDate
+	 *            when the TODO is due OR null if the TODO has no deadline
 	 */
-	public Todo(Priority priority, LocalDate dueDate, String description) {
+	public Todo(Priority priority, String description, LocalDate dueDate) {
 		this(priority, description);
 		if (dueDate == null) {
 			throw new IllegalArgumentException("Must provide a due date.");
