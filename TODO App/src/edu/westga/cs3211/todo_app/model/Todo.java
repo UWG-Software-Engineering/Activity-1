@@ -162,7 +162,7 @@ public class Todo {
 		if(this.priority == Priority.HIGH) {
 			priorityText = Todo.URGENT_PRIORITY_TEXT;
 		}
-		else if(this.priority == Priority.LOW) {
+		else if(this.priority == Priority.LOW || this.dueDate == null) {
 			priorityText = "";
 		}
 		else if(this.dueDate.isBefore(LocalDateTime.now().plusDays(1))){

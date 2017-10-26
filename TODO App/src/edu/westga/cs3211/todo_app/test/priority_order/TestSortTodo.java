@@ -18,8 +18,10 @@ public class TestSortTodo {
 		PriorityOrder orderer = new PriorityOrder();
 		List<Todo> todoList = new ArrayList<Todo>();
 		Todo newTodo = new Todo(Priority.LOW, "pick up stuff");
-		orderer.insertTodo(newTodo, todoList);
+		todoList.add(newTodo);
+		
 		orderer.sortTodos(todoList);
+		
 		assertEquals(newTodo, todoList.get(0));
 	}
 	
@@ -29,9 +31,11 @@ public class TestSortTodo {
 		List<Todo> todoList = new ArrayList<Todo>();
 		Todo newTodo = new Todo(Priority.LOW, "pick up stuff");
 		Todo otherTodo = new Todo(Priority.HIGH, "drop off stuff");
-		orderer.insertTodo(newTodo, todoList);
-		orderer.insertTodo(otherTodo, todoList);
+		todoList.add(newTodo);
+		todoList.add(otherTodo);
+		
 		orderer.sortTodos(todoList);
+		
 		assertEquals(newTodo, todoList.get(1));
 		assertEquals(otherTodo, todoList.get(0));
 	}
@@ -43,10 +47,12 @@ public class TestSortTodo {
 		Todo newTodo = new Todo(Priority.LOW, "pick up stuff");
 		Todo anotherTodo = new Todo(Priority.MEDIUM, "buy stuff");
 		Todo otherTodo = new Todo(Priority.HIGH, "drop off stuff");
-		orderer.insertTodo(newTodo, todoList);
-		orderer.insertTodo(otherTodo, todoList);
-		orderer.insertTodo(anotherTodo, todoList);
+		todoList.add(newTodo);
+		todoList.add(otherTodo);
+		todoList.add(anotherTodo);
+		
 		orderer.sortTodos(todoList);
+		
 		assertEquals(newTodo, todoList.get(2));
 		assertEquals(anotherTodo, todoList.get(1));
 		assertEquals(otherTodo, todoList.get(0));
